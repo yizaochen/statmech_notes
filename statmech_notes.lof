@@ -1,2 +1,7 @@
 \babel@toc {english}{}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Shannon's channel}}{4}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces The illustration of message}}{5}{figure.1.2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces When $M$ is large}}{5}{figure.1.3}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces When the alphabet pool only has one letter.}}{5}{figure.1.4}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces When the alphabet pool becomes larger, the larger the uncertainty}}{6}{figure.1.5}

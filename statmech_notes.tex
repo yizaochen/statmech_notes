@@ -158,46 +158,52 @@ There are two constraints
 \end{align}
 where $\epsilon_i$ is the total energy of cell $i$, and $\bar{\epsilon}$ is the average energy per particle.
 
-\section{Another section heading}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+\section{Shannon's information}
+Consider a signal that passes through a commnication channel
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.6]{./figures/ch1/shannon_channel.pdf}
+  \caption{Shannon's channel}
+\end{figure}
+Suppose the message is a linear string of symbols that is $M$ characters long, where each character is drawn independently from an $r$-letter alphabet, with probability $p_i$. Let $m_i(i=1,2,3,...,r)$ represent the number of times that the ith type of character is observed in the message, as shown in Figure~\ref{fig:shannonconcept}.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.6]{./figures/ch1/shannon_concept_illu.pdf}
+  \caption{The illustration of message}
+  \label{fig:shannonconcept}
+\end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Sample table                                        %
-% Source: www1.maths.leeds.ac.uk/latex/TableHelp1.pdf %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[ht]
-\caption{Sample table} % title of Table
-\centering % used for centering table
-\begin{tabular}{c c c c}
-% centered columns (4 columns)
-\hline\hline %inserts double horizontal lines
-S. No. & Column\#1 & Column\#2 & Column\#3 \\ [0.5ex]
-% inserts table
-%heading
-\hline % inserts single horizontal line
-1 & 50 & 837 & 970 \\
-2 & 47 & 877 & 230 \\
-3 & 31 & 25 & 415 \\
-4 & 35 & 144 & 2356 \\
-5 & 45 & 300 & 556 \\ [1ex] % [1ex] adds vertical space
-\hline %inserts single line
-\end{tabular}
-\label{table:nonlin} % is used to refer this table in the text
-\end{table}
+When $M$ is large, the most likely $M$-letter message will have the composition $m_i=Mp_i$, and this occurs with probability
+\begin{equation}
+  P \equiv p_1^{m_1}\cdots p_{r}^{m_r}=p_1{Mp_1}\cdots p_r{Mp_r}
+\end{equation}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.55]{./figures/ch1/MBigcase.pdf}
+  \caption{When $M$ is large}
+  \label{fig:mbigcase}
+\end{figure}
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \\ Lorem ipsum list:
-\begin{itemize}
-\item Mauris sit amet nulla mi, vitae rutrum ante.
-\item Maecenas quis nulla risus, vel tincidunt ligula.
-\item Nullam ac enim neque, non \emph{dapibus} mauris.
-\end{itemize}
-
-\noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus. Praesent egestas nisi id metus rhoncus ac lobortis sem hendrerit. Etiam et sapien eget lectus interdum posuere sit amet ac urna\footnote{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus.}:
-
-\subsection{Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus. Praesent egestas nisi id metus rhoncus ac lobortis sem hendrerit. Etiam et sapien eget lectus interdum posuere sit amet ac urna. Aliquam pellentesque imperdiet erat, eget consectetur felis malesuada quis. Pellentesque sollicitudin, odio sed dapibus eleifend, magna sem luctus turpis, id aliquam felis dolor eu diam. Etiam ullamcorper, nunc a accumsan adipiscing, turpis odio bibendum erat, id convallis magna eros nec metus. Sed vel ligula justo, sit amet vestibulum dolor. Sed vitae augue sit amet magna ullamcorper suscipit. Quisque dictum ipsum a sapien egestas facilisis. 
-
-\subsection{Lorem ipsum dolor sit amet, consectetur adipiscing}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus ante, auctor et pulvinar non, posuere ac lacus. Praesent egestas nisi id metus rhoncus ac lobortis sem hendrerit. Etiam et sapien eget lectus interdum posuere sit amet ac urna. Aliquam pellentesque imperdiet erat, eget consectetur felis malesuada quis. Pellentesque sollicitudin, odio sed dapibus eleifend, magna sem luctus turpis, id aliquam felis dolor eu diam.
-
+In the limiting case of an alphabet having only a single letter, the probability of knwoing the message is 
+\begin{equation}
+  P=1
+\end{equation}
+because there is only one possible string of characters.
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.55]{./figures/ch1/MSmallcase.pdf}
+  \caption{When the alphabet pool only has one letter.}
+  \label{fig:msmallcase}
+\end{figure}
+The larger the alphabet is($r$ becomes larger), the smaller the value of $P$ and the greater the uncertainty of receiving a particular message. The logarithm of $1/P$
+\begin{equation}
+  H=\log{(1/P)}=-M\sum_i p_i \log{p_i}
+\end{equation}
+is sometimes called the uncertainty or missing information.
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.55]{./figures/ch1/alphabetlarge.pdf}
+  \caption{When the alphabet pool becomes larger, the larger the uncertainty}
+  \label{fig:alphabetlarge}
+\end{figure}
 \end{document}
